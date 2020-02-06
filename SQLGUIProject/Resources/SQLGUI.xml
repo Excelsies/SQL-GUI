@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SQLGUI>
+
+
+  <Servers>
+
+
+    <Server>
+
+      <name>MySqlServerName1</name>
+
+      <WindowsAuthentication>false</WindowsAuthentication>
+
+      <ServerCredentials>ServerUsername</ServerCredentials>
+
+      <ServerCredentials>ServerPassword</ServerCredentials>
+
+    </Server>
+
+
+    <Server>
+
+      <name>MySqlServerName2</name>
+
+      <WindowsAuthentication>false</WindowsAuthentication>
+
+      <ServerCredentials>ServerUsername</ServerCredentials>
+
+      <ServerCredentials>ServerPassword</ServerCredentials>
+
+    </Server>
+
+
+    <Server>
+
+      <name>MySqlServerName3</name>
+
+      <WindowsAuthentication>false</WindowsAuthentication>
+
+      <ServerCredentials>ServerUsername</ServerCredentials>
+
+      <ServerCredentials>ServerPassword</ServerCredentials>
+
+    </Server>
+
+
+    <Server>
+
+      <name>MySqlServerName4</name>
+
+      <WindowsAuthentication>true</WindowsAuthentication>
+
+    </Server>
+
+
+    <Server>
+
+      <name>MySqlServerName5</name>
+
+      <WindowsAuthentication>true</WindowsAuthentication>
+
+    </Server>
+
+
+    <Server>
+
+      <name>MySqlServerName6</name>
+
+      <WindowsAuthentication>true</WindowsAuthentication>
+
+    </Server>
+
+  </Servers>
+
+
+  <Queries>
+
+
+    <Query>
+
+      <Name>Query1</Name>
+
+      <QueryText>SELECTvalue1,value2,value3FROM tableWHERE value1 = [P]ORDER BY value2 </QueryText>
+
+      <QueryParameter>SomeValue</QueryParameter>
+
+      <sqlServer>MySqlServerName1</sqlServer>
+
+      <sqlServer>MySqlServerName2</sqlServer>
+
+      <sqlServer>MySqlServerName3</sqlServer>
+
+      <database>Y</database>
+
+    </Query>
+
+
+    <Query>
+
+      <Name>Query2</Name>
+
+      <QueryText>SELECTvalue1,value2,value3FROM table </QueryText>
+
+      <sqlServer>MySqlServerName1</sqlServer>
+
+      <sqlServer>MySqlServerName2</sqlServer>
+
+      <sqlServer>MySqlServerName3</sqlServer>
+
+    </Query>
+
+
+    <Query>
+
+      <Name>Query3</Name>
+
+      <QueryText>select * from table where value = [P]</QueryText>
+
+      <QueryParameter>Specific Value</QueryParameter>
+
+      <sqlServer>MySqlServerName1</sqlServer>
+
+      <sqlServer>MySqlServerName2</sqlServer>
+
+      <sqlServer>MySqlServerName3</sqlServer>
+
+    </Query>
+
+
+    <Query>
+
+      <Name>Query4</Name>
+
+      <QueryText>select *from table1 t1JOIN table2 t2 On t1.value = t2.valueWhere value1 = [P] AND t2.value2 = [P] </QueryText>
+
+      <QueryParameter>Specific Value</QueryParameter>
+
+      <QueryParameter>Another Specific Value</QueryParameter>
+
+      <sqlServer>MySqlServerName1</sqlServer>
+
+      <sqlServer>MySqlServerName2</sqlServer>
+
+      <sqlServer>MySqlServerName3</sqlServer>
+
+      <sqlServer>MySqlServerName4</sqlServer>
+
+      <sqlServer>MySqlServerName5</sqlServer>
+
+      <sqlServer>MySqlServerName6</sqlServer>
+
+    </Query>
+
+
+    <Query>
+
+      <Name>Query5</Name>
+
+      <QueryText>select *from table1 t1JOIN table2 t2 On t1.value = t2.valueWhere value1 = [P] </QueryText>
+
+      <QueryParameter>Specific Value</QueryParameter>
+
+      <sqlServer>MySqlServerName4</sqlServer>
+
+      <sqlServer>MySqlServerName5</sqlServer>
+
+      <sqlServer>MySqlServerName6</sqlServer>
+
+      <database>Y</database>
+
+    </Query>
+
+  </Queries>
+
+</SQLGUI>

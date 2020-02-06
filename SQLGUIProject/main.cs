@@ -14,44 +14,9 @@ namespace SQLGUIProject
         public main()
         {
             InitializeComponent();
-
+            //*
             if (Properties.Settings.Default.customThemeSet)
                 themeClass.customTheme(this);//Sets the custom theme for the form
-
-            XDocument defaultXML = XDocument.Load(Properties.Settings.Default.PathToDefaultXML);
-
-            if (File.Exists(XMLPath))
-            {
-                // check queries and servers
-                List<SQLGUI.Common.Query> defQueries = SQLGUI.Common.Query.LoadAllFromXML(Properties.Settings.Default.PathToDefaultXML);
-                List<SQLGUI.Common.SQLServer> defServers = SQLGUI.Common.SQLServer.LoadAllFromXML(Properties.Settings.Default.PathToDefaultXML);
-                List<SQLGUI.Common.Query> curQueries = SQLGUI.Common.Query.LoadAllFromXML(XMLPath);
-                List<SQLGUI.Common.SQLServer> curServers = SQLGUI.Common.SQLServer.LoadAllFromXML(XMLPath);
-
-                foreach (var q in defQueries)
-                {
-                    if (!curQueries.Contains(q))
-                    {
-                        q.SaveNewQuery(defaultXML, q.queryName, q.queryText, q.sqlServers, q.paramList, q.database);
-                        defaultXML.Save(Properties.Settings.Default.PathToXML);
-                    }
-                }
-
-                foreach (var s in defServers)
-                {
-                    if (!curServers.Contains(s))
-                    {
-                        s.SaveNewServer(defaultXML, s.ServerName, s.WindowsAuthentication.ToString(), s.ServerCredentials[0], s.ServerCredentials[1]);
-                        defaultXML.Save(Properties.Settings.Default.PathToXML);
-                    }
-                }
-
-            }
-            else
-            {
-                defaultXML.Save(XMLPath);
-            }
-
         }
 
 

@@ -1,8 +1,8 @@
 ﻿SQL GUI Change Log
 
-3.0.1.2 
--Fixed a bug that resets all the queries upon update
+3.0.1.2 2/5/2020 Bug Release
 -Disabled the server lookup form from freezing the rest of the program
+-Added Timeout Exception
 
 3.0.1.1 1/31/2020 Bug Release
 -Cleaned Up code

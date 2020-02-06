@@ -33,41 +33,47 @@ namespace SQLGUIProject
             table.Clear();
             foreach (var server in servers)
             {
-                SqlConnection myConnection;
+                try {
+                    SqlConnection myConnection;
 
-                //sets up the connection to the database
-                if (!server.WindowsAuthentication)
-                {
-                    myConnection = new SqlConnection("user id=" + server.ServerCredentials[0] +
-                                                   ";password=" + server.ServerCredentials[1] + ";server=" + server.ServerName +
-                                                   ";connection timeout=3");
-                }
-                else
-                {
-                    myConnection = new SqlConnection("server=" + server.ServerName + "; Integrated Security=SSPI; connection timeout=3");
-
-                }
-
-                using (myConnection)
-                {
-                    myConnection.Open();
-
-                    // Set up a command with the given query and associate
-                    // this with the current connection.
-                    using (SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", myConnection))
+                    //sets up the connection to the database
+                    if (!server.WindowsAuthentication)
                     {
-                        using (IDataReader dr = cmd.ExecuteReader())
+                        myConnection = new SqlConnection("user id=" + server.ServerCredentials[0] +
+                                                       ";password=" + server.ServerCredentials[1] + ";server=" + server.ServerName +
+                                                       ";connection timeout=3");
+                    }
+                    else
+                    {
+                        myConnection = new SqlConnection("server=" + server.ServerName + "; Integrated Security=SSPI; connection timeout=3");
+
+                    }
+
+                    using (myConnection)
+                    {
+                        myConnection.Open();
+
+                        // Set up a command with the given query and associate
+                        // this with the current connection.
+                        using (SqlCommand cmd = new SqlCommand("SELECT name from sys.databases", myConnection))
                         {
-                            while (dr.Read())
+                            using (IDataReader dr = cmd.ExecuteReader())
                             {
-                                table.Rows.Add(dr[0].ToString(), server.ServerName);
+                                while (dr.Read())
+                                {
+                                    table.Rows.Add(dr[0].ToString(), server.ServerName);
+                                }
                             }
                         }
+                        myConnection.Close();
                     }
-                    myConnection.Close();
+
+
                 }
-
-
+                catch (Exception e)
+                {
+                    DialogResult message = MessageBox.Show("Error pulling databases for server " + server.ServerName + " \n Exception: \n" + e, "Server Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
             bs.DataSource = table;
