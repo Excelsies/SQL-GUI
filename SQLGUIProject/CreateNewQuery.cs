@@ -9,15 +9,15 @@ namespace SQLGUIProject
     {
         public XDocument XML;
         private bool editing;
-        private List<SQLGUIProject.Common.Query> queries = SQLGUIProject.Common.Query.LoadAllFromXML(Properties.Settings.Default.PathToXML);
-        private SQLGUIProject.Common.Query Query;
+        private List<SQLGUI.Common.Query> queries = SQLGUI.Common.Query.LoadAllFromXML(Properties.Settings.Default.PathToXML);
+        private SQLGUI.Common.Query Query;
         private string queryN;
         private int index = 1;
         private List<int> indexes = new List<int>();
         private List<int> removedIndexes = new List<int>();
         private string origQuery = null;
 
-        public CreateNewQuery(XDocument xml, ListBox.ObjectCollection servers, SQLGUIProject.Common.Query q)
+        public CreateNewQuery(XDocument xml, ListBox.ObjectCollection servers, SQLGUI.Common.Query q)
         {
             InitializeComponent();
 
@@ -30,7 +30,7 @@ namespace SQLGUIProject
                 themeClass.customTheme(this);//Sets the custom theme for the form
         }
 
-        public CreateNewQuery(XDocument xml, string name, string query, List<string> parameters, ListBox.ObjectCollection servers, List<string> chckedServers, bool dataBase, SQLGUIProject.Common.Query q)
+        public CreateNewQuery(XDocument xml, string name, string query, List<string> parameters, ListBox.ObjectCollection servers, List<string> chckedServers, bool dataBase, SQLGUI.Common.Query q)
         {
             InitializeComponent();
 
@@ -173,7 +173,7 @@ namespace SQLGUIProject
 
             List<string> servers = new List<string>();
 
-            foreach (SQLGUIProject.Common.SQLServer item in uxServerListBx.CheckedItems)
+            foreach (SQLGUI.Common.SQLServer item in uxServerListBx.CheckedItems)
             {
                 servers.Add(item.ServerName);
             }
@@ -248,7 +248,7 @@ namespace SQLGUIProject
 
             List<string> servers = new List<string>();
 
-            foreach (SQLGUIProject.Common.SQLServer item in uxServerListBx.CheckedItems)
+            foreach (SQLGUI.Common.SQLServer item in uxServerListBx.CheckedItems)
             {
                 servers.Add(item.ServerName);
             }

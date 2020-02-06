@@ -9,11 +9,11 @@ namespace SQLGUIProject
     {
         private bool editing;
         public XDocument XML;
-        private SQLGUIProject.Common.SQLServer Server;
+        private SQLGUI.Common.SQLServer Server;
         private string serverN;
-        private List<SQLGUIProject.Common.SQLServer> servers = SQLGUIProject.Common.SQLServer.LoadAllFromXML(Properties.Settings.Default.PathToXML);
+        private List<SQLGUI.Common.SQLServer> servers = SQLGUI.Common.SQLServer.LoadAllFromXML(Properties.Settings.Default.PathToXML);
 
-        public ServerForm(XDocument xml, SQLGUIProject.Common.SQLServer server)
+        public ServerForm(XDocument xml, SQLGUI.Common.SQLServer server)
         {
             InitializeComponent();
 
@@ -32,7 +32,7 @@ namespace SQLGUIProject
             }
         }
 
-        public ServerForm(string serverName, bool WindowsAuthentication, string Username, string Password, XDocument xml, SQLGUIProject.Common.SQLServer server)
+        public ServerForm(string serverName, bool WindowsAuthentication, string Username, string Password, XDocument xml, SQLGUI.Common.SQLServer server)
         {
             InitializeComponent();
 

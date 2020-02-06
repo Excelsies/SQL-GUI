@@ -1,518 +1,176 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<SQLGUIProject>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SQLGUI>
+
+
   <Servers>
-    <Server>
-      <name>sql-mp1-13.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
+
 
     <Server>
-      <name>sql-mp1-14.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
 
-    <Server>
-      <name>sql-mp1-15.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
+      <name>MySqlServerName1</name>
 
-    <Server>
-      <name>sql-mp1-16.ap.local</name>
       <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
 
-    <Server>
-      <name>sql-mp1-17.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
+      <ServerCredentials>ServerUsername</ServerCredentials>
 
-    <Server>
-      <name>sql-mp1-18.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
+      <ServerCredentials>ServerPassword</ServerCredentials>
 
-    <Server>
-      <name>sql-mp1-19.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
-
-    <Server>
-      <name>sql-mp1-20.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
-
-    <Server>
-      <name>sql-mp1-21.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
-
-    <Server>
-      <name>sql-mp1-22.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
-
-    <Server>
-      <name>sql-mp1-23.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
-    </Server>
-
-    <Server>
-      <name>sql-mp1-24.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
     </Server>
 
 
     <Server>
-      <name>APGP1PDAGSQL01A.ap.local</name>
+
+      <name>MySqlServerName2</name>
+
+      <WindowsAuthentication>false</WindowsAuthentication>
+
+      <ServerCredentials>ServerUsername</ServerCredentials>
+
+      <ServerCredentials>ServerPassword</ServerCredentials>
+
+    </Server>
+
+
+    <Server>
+
+      <name>MySqlServerName3</name>
+
+      <WindowsAuthentication>false</WindowsAuthentication>
+
+      <ServerCredentials>ServerUsername</ServerCredentials>
+
+      <ServerCredentials>ServerPassword</ServerCredentials>
+
+    </Server>
+
+
+    <Server>
+
+      <name>MySqlServerName4</name>
+
       <WindowsAuthentication>true</WindowsAuthentication>
+
     </Server>
 
+
     <Server>
-      <name>APGP1PDSQLM03</name>
+
+      <name>MySqlServerName5</name>
+
       <WindowsAuthentication>true</WindowsAuthentication>
+
     </Server>
 
+
     <Server>
-      <name>apgp1crsql01.ap.local</name>
-      <WindowsAuthentication>false</WindowsAuthentication>
-      <ServerCredentials>APTechops</ServerCredentials>
-      <ServerCredentials>8kIrwEpdA5tp</ServerCredentials>
+
+      <name>MySqlServerName6</name>
+
+      <WindowsAuthentication>true</WindowsAuthentication>
+
     </Server>
 
   </Servers>
 
+
   <Queries>
+
+
     <Query>
-      <Name>Password Lookup</Name>
-      <QueryText>
-        SELECT
-        s.Name as [Shopname],
-        u.UserID,
-        ro.Name as Role,
-        u.FirstName,
-        u.LastName,
-        u.[Login] as Username,
-        u.password,
-        du.DmsUserNumber
-        FROM dmsuser du
-        INNER JOIN shop s ON s.shopid = du.shopid
-        INNER JOIN [user] u ON u.userid = du.userid
-        INNER JOIN catalog.state cs ON cs.stateid = s.stateid
-        INNER JOIN UserRole ur (NOLOCK) ON u.UserID = ur.UserID
-        INNER JOIN Role ro (NOLOCK) ON ur.RoleID = ro.RoleID
-        WHERE u.active = 1
-        AND du.DmsUserNumber NOT LIKE '%Train%'
-        ORDER BY FirstName
-      </QueryText>
-      <sqlServer>sql-mp1-13.ap.local</sqlServer>
-      <sqlServer>sql-mp1-14.ap.local</sqlServer>
-      <sqlServer>sql-mp1-15.ap.local</sqlServer>
-      <sqlServer>sql-mp1-16.ap.local</sqlServer>
-      <sqlServer>sql-mp1-17.ap.local</sqlServer>
-      <sqlServer>sql-mp1-18.ap.local</sqlServer>
-      <sqlServer>sql-mp1-19.ap.local</sqlServer>
-      <sqlServer>sql-mp1-20.ap.local</sqlServer>
-      <sqlServer>sql-mp1-21.ap.local</sqlServer>
-      <sqlServer>sql-mp1-22.ap.local</sqlServer>
-      <sqlServer>sql-mp1-23.ap.local</sqlServer>
-      <sqlServer>sql-mp1-24.ap.local</sqlServer>
+
+      <Name>Query1</Name>
+
+      <QueryText>SELECTvalue1,value2,value3FROM tableWHERE value1 = [P]ORDER BY value2 </QueryText>
+
+      <QueryParameter>SomeValue</QueryParameter>
+
+      <sqlServer>MySqlServerName1</sqlServer>
+
+      <sqlServer>MySqlServerName2</sqlServer>
+
+      <sqlServer>MySqlServerName3</sqlServer>
+
       <database>Y</database>
 
     </Query>
 
+
     <Query>
-      <Name>Identifix Credential Lookup</Name>
-      <QueryText>
-        SELECT
-        s.Name AS Shop_Name,
-        u.userid,
-        u.FirstName,
-        u.LastName,
-        u.[Login] AS MPLogin,
-        u.[Password] AS MPPassword,
-        UserWebAccessSiteID,
-        uwas.[login] AS IdentifixLogin,
-        uwas.[password] AS IdentifixPassword
-        FROM dmsuser du
-        JOIN shop s
-        ON s.shopid = du.shopid
-        JOIN [user] u
-        ON u.userid = du.userid
-        LEFT JOIN Userwebaccesssite uwas
-        ON uwas.userid = u.userid
-        WHERE uwas.WebAccessSiteID = 12 --WebAccessSiteID 12 is Identifix
-        AND u.active = 1
-        AND du.DmsUserNumber NOT LIKE '%Train%'
-      </QueryText>
-      <sqlServer>sql-mp1-13.ap.local</sqlServer>
-      <sqlServer>sql-mp1-14.ap.local</sqlServer>
-      <sqlServer>sql-mp1-15.ap.local</sqlServer>
-      <sqlServer>sql-mp1-16.ap.local</sqlServer>
-      <sqlServer>sql-mp1-17.ap.local</sqlServer>
-      <sqlServer>sql-mp1-18.ap.local</sqlServer>
-      <sqlServer>sql-mp1-19.ap.local</sqlServer>
-      <sqlServer>sql-mp1-20.ap.local</sqlServer>
-      <sqlServer>sql-mp1-21.ap.local</sqlServer>
-      <sqlServer>sql-mp1-22.ap.local</sqlServer>
-      <sqlServer>sql-mp1-23.ap.local</sqlServer>
-      <sqlServer>sql-mp1-24.ap.local</sqlServer>
+
+      <Name>Query2</Name>
+
+      <QueryText>SELECTvalue1,value2,value3FROM table </QueryText>
+
+      <sqlServer>MySqlServerName1</sqlServer>
+
+      <sqlServer>MySqlServerName2</sqlServer>
+
+      <sqlServer>MySqlServerName3</sqlServer>
+
+    </Query>
+
+
+    <Query>
+
+      <Name>Query3</Name>
+
+      <QueryText>select * from table where value = [P]</QueryText>
+
+      <QueryParameter>Specific Value</QueryParameter>
+
+      <sqlServer>MySqlServerName1</sqlServer>
+
+      <sqlServer>MySqlServerName2</sqlServer>
+
+      <sqlServer>MySqlServerName3</sqlServer>
+
+    </Query>
+
+
+    <Query>
+
+      <Name>Query4</Name>
+
+      <QueryText>select *from table1 t1JOIN table2 t2 On t1.value = t2.valueWhere value1 = [P] AND t2.value2 = [P] </QueryText>
+
+      <QueryParameter>Specific Value</QueryParameter>
+
+      <QueryParameter>Another Specific Value</QueryParameter>
+
+      <sqlServer>MySqlServerName1</sqlServer>
+
+      <sqlServer>MySqlServerName2</sqlServer>
+
+      <sqlServer>MySqlServerName3</sqlServer>
+
+      <sqlServer>MySqlServerName4</sqlServer>
+
+      <sqlServer>MySqlServerName5</sqlServer>
+
+      <sqlServer>MySqlServerName6</sqlServer>
+
+    </Query>
+
+
+    <Query>
+
+      <Name>Query5</Name>
+
+      <QueryText>select *from table1 t1JOIN table2 t2 On t1.value = t2.valueWhere value1 = [P] </QueryText>
+
+      <QueryParameter>Specific Value</QueryParameter>
+
+      <sqlServer>MySqlServerName4</sqlServer>
+
+      <sqlServer>MySqlServerName5</sqlServer>
+
+      <sqlServer>MySqlServerName6</sqlServer>
+
       <database>Y</database>
 
-    </Query>
-
-    <Query>
-      <Name>Time Zone Check</Name>
-      <QueryText>
-        SELECT
-        ls.localserversettingid,
-        ls.serversettingid,
-        ls.val,
-        ss.name
-        FROM localserversetting ls
-        INNER JOIN catalog.serversetting AS ss
-        ON ls.serversettingid = ss.serversettingid
-        WHERE ls.serversettingid IN ('73', '74', '75', '76')
-      </QueryText>
-      <sqlServer>sql-mp1-13.ap.local</sqlServer>
-      <sqlServer>sql-mp1-14.ap.local</sqlServer>
-      <sqlServer>sql-mp1-15.ap.local</sqlServer>
-      <sqlServer>sql-mp1-16.ap.local</sqlServer>
-      <sqlServer>sql-mp1-17.ap.local</sqlServer>
-      <sqlServer>sql-mp1-18.ap.local</sqlServer>
-      <sqlServer>sql-mp1-19.ap.local</sqlServer>
-      <sqlServer>sql-mp1-20.ap.local</sqlServer>
-      <sqlServer>sql-mp1-21.ap.local</sqlServer>
-      <sqlServer>sql-mp1-22.ap.local</sqlServer>
-      <sqlServer>sql-mp1-23.ap.local</sqlServer>
-      <sqlServer>sql-mp1-24.ap.local</sqlServer>
-      <database>Y</database>
-    </Query>
-
-    <Query>
-      <Name>Duplicate Labor Rates</Name>
-      <QueryText>
-        select shopid, [name], count(*)
-        from LaborRate
-        group by shopid, [name]
-        having count(*) > 1
-      </QueryText>
-      <sqlServer>sql-mp1-13.ap.local</sqlServer>
-      <sqlServer>sql-mp1-14.ap.local</sqlServer>
-      <sqlServer>sql-mp1-15.ap.local</sqlServer>
-      <sqlServer>sql-mp1-16.ap.local</sqlServer>
-      <sqlServer>sql-mp1-17.ap.local</sqlServer>
-      <sqlServer>sql-mp1-18.ap.local</sqlServer>
-      <sqlServer>sql-mp1-19.ap.local</sqlServer>
-      <sqlServer>sql-mp1-20.ap.local</sqlServer>
-      <sqlServer>sql-mp1-21.ap.local</sqlServer>
-      <sqlServer>sql-mp1-22.ap.local</sqlServer>
-      <sqlServer>sql-mp1-23.ap.local</sqlServer>
-      <sqlServer>sql-mp1-24.ap.local</sqlServer>
-      <database>Y</database>
-    </Query>
-
-
-    <Query>
-      <Name>Repair Order Detail</Name>
-      <QueryText>select * from RepairOrder where DmsRepairOrderNumber = [P]</QueryText>
-      <QueryParameter>RO Number</QueryParameter>
-      <sqlServer>sql-mp1-13.ap.local</sqlServer>
-      <sqlServer>sql-mp1-14.ap.local</sqlServer>
-      <sqlServer>sql-mp1-15.ap.local</sqlServer>
-      <sqlServer>sql-mp1-16.ap.local</sqlServer>
-      <sqlServer>sql-mp1-17.ap.local</sqlServer>
-      <sqlServer>sql-mp1-18.ap.local</sqlServer>
-      <sqlServer>sql-mp1-19.ap.local</sqlServer>
-      <sqlServer>sql-mp1-20.ap.local</sqlServer>
-      <sqlServer>sql-mp1-21.ap.local</sqlServer>
-      <sqlServer>sql-mp1-22.ap.local</sqlServer>
-      <sqlServer>sql-mp1-23.ap.local</sqlServer>
-      <sqlServer>sql-mp1-24.ap.local</sqlServer>
-      <database>Y</database>
-    </Query>
-
-    <Query>
-      <Name>Recommendation Detail</Name>
-      <QueryText>
-        select *
-        from RepairOrder ro
-        JOIN RORec rec On ro.RepairOrderID = rec.RepairOrderID
-        Where DmsRepairOrderNumber = [P]
-      </QueryText>
-      <QueryParameter>RO Number</QueryParameter>
-      <sqlServer>sql-mp1-13.ap.local</sqlServer>
-      <sqlServer>sql-mp1-14.ap.local</sqlServer>
-      <sqlServer>sql-mp1-15.ap.local</sqlServer>
-      <sqlServer>sql-mp1-16.ap.local</sqlServer>
-      <sqlServer>sql-mp1-17.ap.local</sqlServer>
-      <sqlServer>sql-mp1-18.ap.local</sqlServer>
-      <sqlServer>sql-mp1-19.ap.local</sqlServer>
-      <sqlServer>sql-mp1-20.ap.local</sqlServer>
-      <sqlServer>sql-mp1-21.ap.local</sqlServer>
-      <sqlServer>sql-mp1-22.ap.local</sqlServer>
-      <sqlServer>sql-mp1-23.ap.local</sqlServer>
-      <sqlServer>sql-mp1-24.ap.local</sqlServer>
-      <database>Y</database>
-    </Query>
-
-    <Query>
-      <Name>Original Customer Request Detail</Name>
-      <QueryText>
-        select *
-        from RepairOrder ro
-        JOIN LineItem line On ro.RepairOrderID = line.RepairOrderID
-        Where DmsRepairOrderNumber = [P]
-      </QueryText>
-      <QueryParameter>RO Number</QueryParameter>
-      <sqlServer>sql-mp1-13.ap.local</sqlServer>
-      <sqlServer>sql-mp1-14.ap.local</sqlServer>
-      <sqlServer>sql-mp1-15.ap.local</sqlServer>
-      <sqlServer>sql-mp1-16.ap.local</sqlServer>
-      <sqlServer>sql-mp1-17.ap.local</sqlServer>
-      <sqlServer>sql-mp1-18.ap.local</sqlServer>
-      <sqlServer>sql-mp1-19.ap.local</sqlServer>
-      <sqlServer>sql-mp1-20.ap.local</sqlServer>
-      <sqlServer>sql-mp1-21.ap.local</sqlServer>
-      <sqlServer>sql-mp1-22.ap.local</sqlServer>
-      <sqlServer>sql-mp1-23.ap.local</sqlServer>
-      <sqlServer>sql-mp1-24.ap.local</sqlServer>
-      <database>Y</database>
-    </Query>
-
-    <Query>
-      <Name>Get Shop Notes</Name>
-      <QueryText>
-        SELECT TOP (1000) [RepairOrderShopNoteID]
-        ,RO.[DmsRepairOrderNumber]
-        ,SN.[Note]
-        ,SN.[CreatedAt]
-        ,SN.[UserID]
-        ,SN.[RowVersion]
-        FROM [PETERSONMOT_MPICore_Data].[dbo].[RepairOrderShopNote] SN
-        Join dbo.RepairOrder RO On RO.RepairOrderID = SN.RepairOrderID
-        AND RO.DmsRepairOrderNumber = [P]
-      </QueryText>
-      <QueryParameter>RO Number</QueryParameter>
-      <sqlServer>sql-mp1-13.ap.local</sqlServer>
-      <sqlServer>sql-mp1-14.ap.local</sqlServer>
-      <sqlServer>sql-mp1-15.ap.local</sqlServer>
-      <sqlServer>sql-mp1-16.ap.local</sqlServer>
-      <sqlServer>sql-mp1-17.ap.local</sqlServer>
-      <sqlServer>sql-mp1-18.ap.local</sqlServer>
-      <sqlServer>sql-mp1-19.ap.local</sqlServer>
-      <sqlServer>sql-mp1-20.ap.local</sqlServer>
-      <sqlServer>sql-mp1-21.ap.local</sqlServer>
-      <sqlServer>sql-mp1-22.ap.local</sqlServer>
-      <sqlServer>sql-mp1-23.ap.local</sqlServer>
-      <sqlServer>sql-mp1-24.ap.local</sqlServer>
-      <database>Y</database>
-    </Query>
-
-    <Query>
-      <Name>RO Detail</Name>
-      <QueryText>
-        SELECT TOP (100)
-        r.ROId
-        ,vm.VisitMotoristId
-        ,vm.VisitId
-        ,r.DmsRoNumber
-        ,ou.Name AS Instance
-        ,vm.MotoristCacheKey
-        ,v.VIN
-        ,v.Year
-        ,v.Make
-        ,v.Model
-        ,vm.FirstName
-        ,vm.LastName
-        ,vm.Phone
-        ,vm.Email
-        ,p.InspPkgId
-        ,pd.Name as Package
-        ,r.CreatedAt
-        ,r.ClosedAt
-        ,r.IsDeleted
-        ,r.IsFinalized
-        , 'https://multipoint.autopoint.com/#/' + lower(cast(rs.OrgUnitCacheKey as VARCHAR(50))) + '/estimate/' + lower(cast(r.ROId as VARCHAR(50))) as 'RO URL'
-        FROM [Transaction].[rsl].[RO] AS r WITH (NOLOCK)
-        LEFT JOIN [Transaction].[rsl].[VisitMotorist] AS vm WITH (NOLOCK) ON r.VisitID = vm.VisitID
-        LEFT JOIN [Transaction].[rsl].[RouteSheet] AS rs WITH (NOLOCK) ON r.RouteSheetId = rs.RouteSheetId
-        LEFT JOIN [Nexus].[org].[OrganizationUnit] AS ou WITH (NOLOCK) ON rs.OrgUnitCacheKey = ou.OrganizationUnitCacheKey
-        LEFT JOIN [Transaction].[rsl].[Visit] AS v WITH (NOLOCK) ON r.VisitId = v.VisitId
-        Left JOIN [Package].[defn].InspPkg AS p with (NOLOCK) ON r.InspPkgCacheKey = p.InspPkgCacheKey
-        Left JOIN [Package].[defn].InspPkgDetail AS pd with (NOLOCK) ON p.InspPkgId = pd.InspPkgId
-        WHERE r.DmsRONumber = [P]
-      </QueryText>
-      <QueryParameter>RO Number</QueryParameter>
-      <sqlServer>APGP1PDAGSQL01A.ap.local</sqlServer>
-    </Query>
-
-    <Query>
-      <Name>OCR Detail</Name>
-      <QueryText>
-        SELECT TOP (100)
-        ro.DmsRONumber,
-        ro.ROId,
-        ou.Name AS Instance,
-        tr.DMSRequestCode,
-        wr.Description,
-        rr.OpCode,
-        rr.RecResultId,
-        wr.WorkRequestId,
-        tr.TaskResultId
-        FROM [Transaction].rsl.RO ro (NOLOCK)
-        JOIN [Transaction].insp.WorkRequest wr (NOLOCK)
-        ON ro.ROId = wr.ROId
-        JOIN [Transaction].insp.TaskResult tr (NOLOCK)
-        ON wr.WorkRequestId = tr.WorkRequestId
-        JOIN [Transaction].insp.RecResult rr (NOLOCK)
-        ON tr.TaskResultId = rr.TaskResultId
-        LEFT JOIN [Transaction].[rsl].[RouteSheet] AS rs WITH (NOLOCK) ON ro.RouteSheetId = rs.RouteSheetId
-        LEFT JOIN [Nexus].[org].[OrganizationUnit] AS ou WITH (NOLOCK) ON rs.OrgUnitCacheKey = ou.OrganizationUnitCacheKey
-        WHERE ro.DmsRONumber = [P]
-        Order By DMSRequestCode
-      </QueryText>
-      <QueryParameter>RO Number</QueryParameter>
-      <sqlServer>APGP1PDAGSQL01A.ap.local</sqlServer>
-    </Query>
-
-    <Query>
-      <Name>Estimate Detail</Name>
-      <QueryText>
-        SELECT TOP (100)
-        ro.DmsRONumber,
-        ro.ROId,
-        ou.Name AS Instance,
-        tr.DMSRequestCode,
-        wr.Description,
-        rr.OpCode,
-        rr.RecResultId,
-        wr.WorkRequestId,
-        tr.TaskResultId
-        FROM [Transaction].rsl.RO ro (NOLOCK)
-        JOIN [Transaction].insp.WorkRequest wr (NOLOCK)
-        ON ro.ROId = wr.ROId
-        JOIN [Transaction].insp.TaskResult tr (NOLOCK)
-        ON wr.WorkRequestId = tr.WorkRequestId
-        JOIN [Transaction].insp.RecResult rr (NOLOCK)
-        ON tr.TaskResultId = rr.TaskResultId
-        LEFT JOIN [Transaction].[rsl].[RouteSheet] AS rs WITH (NOLOCK) ON ro.RouteSheetId = rs.RouteSheetId
-        LEFT JOIN [Nexus].[org].[OrganizationUnit] AS ou WITH (NOLOCK) ON rs.OrgUnitCacheKey = ou.OrganizationUnitCacheKey
-        WHERE ro.DmsRONumber = [P]
-      </QueryText>
-      <QueryParameter>RO Number</QueryParameter>
-      <sqlServer>APGP1PDAGSQL01A.ap.local</sqlServer>
-    </Query>
-
-    <Query>
-      <Name>RO Media</Name>
-      <QueryText>
-        SELECT
-        MediaId
-        ,RO.ROId
-        ,DmsRONumber
-        ,ou.Name AS Dealership
-        ,MediaTypeId
-        ,Description
-        ,MediaUrl
-        ,DisplayOrder
-        ,me.CreatedAt
-        ,me.CreatedBy
-        FROM [Transaction].insp.Media me (NOLOCK)
-        JOIN [Transaction].rsl.ro RO (NOLOCK) ON ro.ROId = me.RoId
-        LEFT JOIN [Transaction].[rsl].[RouteSheet] AS rs WITH (NOLOCK) ON ro.RouteSheetId = rs.RouteSheetId
-        LEFT JOIN [Nexus].[org].[OrganizationUnit] AS ou WITH (NOLOCK) ON rs.OrgUnitCacheKey = ou.OrganizationUnitCacheKey
-        WHERE ro.DmsRONumber = [P]
-      </QueryText>
-      <QueryParameter>RO Number</QueryParameter>
-      <sqlServer>APGP1PDAGSQL01A.ap.local</sqlServer>
-    </Query>
-
-    <Query>
-      <Name>User Info by Email</Name>
-      <QueryText>
-        SELECT TOP (100)
-            us.UserId,
-            us.FirstName,
-            us.LastName,
-            uu.ManagementSystemId as 'Dms Id',
-            us.Email,
-        uu.IsActive,
-            ap.Name as 'Role',
-            ou.Name as 'Shop Name',
-            us.UserCacheKey,
-            uu.OrganizationUnitId,
-            uu.OrganizationUnitUserId,
-            ou.OrganizationUnitCacheKey,
-        'https://thematrix.autopoint.com/#/' + lower(cast(OrganizationUnitCacheKey as VARCHAR(50))) + '/settings/users/edit?key=' + lower(cast(UserCacheKey as VARCHAR(50))) AS 'User URL'
-        FROM Nexus.auth.[User] us (NOLOCK)
-        LEFT JOIN Nexus.auth.OrganizationUnitUser uu (NOLOCK)
-            ON us.UserId = uu.UserId
-        LEFT JOIN Nexus.auth.UserApplicationRole ar (NOLOCK)
-            ON uu.OrganizationUnitUserId = ar.OrganizationUnitUserId
-        LEFT JOIN Nexus.Catalog.ApplicationRole ap (NOLOCK)
-            ON ar.ApplicationRoleId = ap.ApplicationRoleId
-        LEFT JOIN Nexus.org.OrganizationUnit ou (NOLOCK)
-            ON uu.OrganizationUnitId = ou.OrganizationUnitId
-        WHERE us.Email = [P]
-      </QueryText>
-      <QueryParameter>Email</QueryParameter>
-      <sqlServer>APGP1PDAGSQL01A.ap.local</sqlServer>
-    </Query>
-
-    <Query>
-      <Name>MP1 Error Log</Name>
-      <QueryText>
-        SELECT TOP (1000) *
-        FROM [ErrorLogger].[dbo].[Logs]
-        WHERE DealerId = [P]
-        ORDER BY DateCreated Desc
-      </QueryText>
-      <QueryParameter>Dealer ID</QueryParameter>
-      <sqlServer>APGP1PDSQLM03</sqlServer>
-    </Query>
-
-    <Query>
-      <Name>Hunter Integration Check</Name>
-      <QueryText>
-        SELECT VDM.VendorDealerMappingID
-        , VDM.DealerID
-        , VDM.ShopId
-        , V.VendorName
-        , IR.*
-        FROM VendorInspection.dbo.VendorDealerMapping as VDM
-        LEFT OUTER JOIN VendorInspection.dbo.InspectionResult as IR on VDM.VendorDealerMappingID = IR.VendorDealerMappingID
-        LEFT OUTER JOIN VendorInspection.dbo.Vendor as V on VDM.VendorID = V.VendorID
-        WHERE VDM.DealerID = [P]
-        Order By DateImported desc
-      </QueryText>
-      <QueryParameter>Dealer ID</QueryParameter>
-      <sqlServer>apgp1crsql01.ap.local</sqlServer>
     </Query>
 
   </Queries>
 
-</SQLGUIProject>
+</SQLGUI>

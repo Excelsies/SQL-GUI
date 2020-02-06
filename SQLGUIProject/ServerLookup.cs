@@ -9,12 +9,12 @@ namespace SQLGUIProject
     public partial class ServerLookup : Form
     {
 
-        List<SQLGUIProject.Common.SQLServer> servers;
+        List<SQLGUI.Common.SQLServer> servers;
         DataTable table = new DataTable();
         BindingSource bs = new BindingSource();
 
 
-        public ServerLookup(List<SQLGUIProject.Common.SQLServer> s)
+        public ServerLookup(List<SQLGUI.Common.SQLServer> s)
         {
             InitializeComponent();
 

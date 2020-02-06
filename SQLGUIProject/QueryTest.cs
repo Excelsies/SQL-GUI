@@ -9,7 +9,7 @@ namespace SQLGUIProject
         string queryText;
         bool db;
         static string XMLPath = Properties.Settings.Default.PathToXML;
-        List<SQLGUIProject.Common.SQLServer> servers = SQLGUIProject.Common.SQLServer.LoadAllFromXML(XMLPath);
+        List<SQLGUI.Common.SQLServer> servers = SQLGUI.Common.SQLServer.LoadAllFromXML(XMLPath);
         int parameterCount;
 
         public QueryTest(string query, List<string> parameters, List<string> servers, bool database)

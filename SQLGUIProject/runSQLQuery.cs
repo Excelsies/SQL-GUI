@@ -7,7 +7,7 @@ namespace SQLGUIProject
 {
     class runSQLQuery
     {
-        public DataTable runQuery(string query, Common.SQLServer server, string database, List<string> parameters)
+        public DataTable runQuery(string query, SQLGUI.Common.SQLServer server, string database, List<string> parameters)
         {
             SqlConnection myConnection;
             SqlCommand myCommand;

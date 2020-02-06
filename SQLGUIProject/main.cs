@@ -23,10 +23,10 @@ namespace SQLGUIProject
             if (File.Exists(XMLPath))
             {
                 // check queries and servers
-                List<SQLGUIProject.Common.Query> defQueries = SQLGUIProject.Common.Query.LoadAllFromXML(Properties.Settings.Default.PathToDefaultXML);
-                List<SQLGUIProject.Common.SQLServer> defServers = SQLGUIProject.Common.SQLServer.LoadAllFromXML(Properties.Settings.Default.PathToDefaultXML);
-                List<SQLGUIProject.Common.Query> curQueries = SQLGUIProject.Common.Query.LoadAllFromXML(XMLPath);
-                List<SQLGUIProject.Common.SQLServer> curServers = SQLGUIProject.Common.SQLServer.LoadAllFromXML(XMLPath);
+                List<SQLGUI.Common.Query> defQueries = SQLGUI.Common.Query.LoadAllFromXML(Properties.Settings.Default.PathToDefaultXML);
+                List<SQLGUI.Common.SQLServer> defServers = SQLGUI.Common.SQLServer.LoadAllFromXML(Properties.Settings.Default.PathToDefaultXML);
+                List<SQLGUI.Common.Query> curQueries = SQLGUI.Common.Query.LoadAllFromXML(XMLPath);
+                List<SQLGUI.Common.SQLServer> curServers = SQLGUI.Common.SQLServer.LoadAllFromXML(XMLPath);
 
                 foreach (var q in defQueries)
                 {
@@ -56,8 +56,8 @@ namespace SQLGUIProject
 
 
         //creates a list for the servers and the queries
-        List<SQLGUIProject.Common.Query> queries = SQLGUIProject.Common.Query.LoadAllFromXML(XMLPath);
-        List<SQLGUIProject.Common.SQLServer> servers = SQLGUIProject.Common.SQLServer.LoadAllFromXML(XMLPath);
+        List<SQLGUI.Common.Query> queries = SQLGUI.Common.Query.LoadAllFromXML(XMLPath);
+        List<SQLGUI.Common.SQLServer> servers = SQLGUI.Common.SQLServer.LoadAllFromXML(XMLPath);
         XDocument theXML = XDocument.Load(XMLPath);
         List<string> queryNames = new List<string>();
         int selectedQuery;
@@ -529,8 +529,8 @@ namespace SQLGUIProject
 
         private void reloadData()
         {
-            queries = SQLGUIProject.Common.Query.LoadAllFromXML(XMLPath);
-            servers = SQLGUIProject.Common.SQLServer.LoadAllFromXML(XMLPath);
+            queries = SQLGUI.Common.Query.LoadAllFromXML(XMLPath);
+            servers = SQLGUI.Common.SQLServer.LoadAllFromXML(XMLPath);
             theXML = XDocument.Load(XMLPath);
             uxQueryListBox.Items.Clear();
             uxServersListBox.Items.Clear();
