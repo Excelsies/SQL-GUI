@@ -1,0 +1,52 @@
+﻿SQL GUI Change Log
+
+3.0.1.2 
+-Fixed a bug that resets all the queries upon update
+-Disabled the server lookup form from freezing the rest of the program
+
+3.0.1.1 1/31/2020 Bug Release
+-Cleaned Up code
+-Adjusted the About and ChangeLog forms to not freeze the other forms
+-Gave the ability to allow the Query Results columns to be adjusted
+-Gave the ability to allow the Parameters grid columns to be adjusted
+-Gave the ability to adjust the columns in the Server Lookup
+
+3.0.1.0 1/31/2020 Feature Release
+-Adjusted Minimums for ChangeLog and AboutForm
+-Adjusted Maximums for About
+-Adjusted Tab for ChangeLog and AboutForm
+-Fixed the version numbers in the Change Log
+-Lowered Connection Timeout length
+-Added the ability to pull all Databases and sql servers
+--Added the ability to filter the List of databases
+
+3.0.0.4 1/30/2020 Feature Release
+-Reworked About form, it now works with the theme as well
+-Added a Changelog form to display a change log within the application
+-Changelog is now accessibly from the About form
+
+3.0.0.3 1/30/2020 Bug Fix Release
+-Resolved small bug with vertical resizing
+
+3.0.0.2 1/30/2020 Feature Release
+-Added the ability to vertically resize the top and bottom half of every Window
+-Adjusted the tab order of every form
+-Fixed Bugs with import and export XML
+-Resolved a bug when resetting servers and queries
+-Adjusted the fixed size of each form
+
+3.0.0.1 1/29/2020 Bug Fix Release
+-Fixed the about section
+-Fixed the Query Test form to work with the set color theme
+
+3.0.0.0 1/29/2020 Feature Release
+-Ability to add Servers and Queries complete
+-Ability to edit Servers and Queries complete
+-Ability to delete Servers and Queries complete
+-Ability to test Queries before saving changes complete
+
+2.0.0.0 1/6/2020 Feature Release
+-Reworked XML layout and functions
+
+1.0.0.0 11/7/2019 Feature Release
+-Initial release
